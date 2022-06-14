@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10DA61882854C04800CFC1DE /* calculatorVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA61872854C04800CFC1DE /* calculatorVC2.swift */; };
+		10DA61882854C04800CFC1DE /* CalculatorVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA61872854C04800CFC1DE /* CalculatorVC2.swift */; };
 		10E491D828526A03005E257C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E491D728526A03005E257C /* AppDelegate.swift */; };
 		10E491DA28526A03005E257C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E491D928526A03005E257C /* SceneDelegate.swift */; };
 		10E491DC28526A03005E257C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E491DB28526A03005E257C /* ViewController.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10DA61872854C04800CFC1DE /* calculatorVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorVC2.swift; sourceTree = "<group>"; };
+		10DA61872854C04800CFC1DE /* CalculatorVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC2.swift; sourceTree = "<group>"; };
 		10E491D428526A03005E257C /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E491D728526A03005E257C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E491D928526A03005E257C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +61,11 @@
 				10E491D728526A03005E257C /* AppDelegate.swift */,
 				10E491D928526A03005E257C /* SceneDelegate.swift */,
 				10E491DB28526A03005E257C /* ViewController.swift */,
+				10DA61872854C04800CFC1DE /* CalculatorVC2.swift */,
 				10E491DD28526A03005E257C /* Main.storyboard */,
 				10E491E028526A03005E257C /* Assets.xcassets */,
 				10E491E228526A03005E257C /* LaunchScreen.storyboard */,
 				10E491E528526A03005E257C /* Info.plist */,
-				10DA61872854C04800CFC1DE /* calculatorVC2.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10DA61882854C04800CFC1DE /* calculatorVC2.swift in Sources */,
+				10DA61882854C04800CFC1DE /* CalculatorVC2.swift in Sources */,
 				10E491DC28526A03005E257C /* ViewController.swift in Sources */,
 				10E491D828526A03005E257C /* AppDelegate.swift in Sources */,
 				10E491DA28526A03005E257C /* SceneDelegate.swift in Sources */,
@@ -296,6 +296,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,6 +324,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
