@@ -34,12 +34,201 @@ class CalculatorVC2: UIViewController {
     
     var firstNumber: String = ""
     var secondNumber: String = ""
-    var result: Int = 0
+    var result: Double = 0
     var operation: String = ""
+    var isResultFound: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonsUIsetup()
+    }
+    
+    fileprivate func getNumber(_ number: String) {
+        if operation.isEmpty{
+            firstNumber += number
+            currentTextField.text = firstNumber
+        }else{
+            secondNumber += number
+            currentTextField.text = secondNumber
+        }
+    }
+    
+    @IBAction func numberTapped(_ sender: UIButton) {
+        
+        if isResultFound{
+            reset()
+        }
+        
+        switch sender.tag{
+        case 0:
+            getNumber("0")
+        case 1:
+            getNumber("1")
+        case 2:
+            getNumber("2")
+        case 3:
+            getNumber("3")
+        case 4:
+            getNumber("4")
+        case 5:
+            getNumber("5")
+        case 6:
+            getNumber("6")
+        case 7:
+            getNumber("7")
+        case 8:
+            getNumber("8")
+        case 9:
+            getNumber("9")
+        default:
+            print ("There is no such numbers")
+        }
+    }
+    
+    @IBAction func operations(_ sender: UIButton) {
+            
+        switch sender.tag{
+        case 10:
+            operation = "+"
+        case 11:
+            operation = "-"
+        case 12:
+            operation = "*"
+        case 13:
+            operation = "/"
+        case 14:
+            if operation.isEmpty{
+                operation = "%"
+            }
+        default:
+            print("Error. Please, try again")
+        }
+    }
+    
+    @IBAction func findTheResult(_ sender: UIButton) {
+        guard let first = Double(firstNumber), let second = Double(secondNumber) else {
+            print("There is no number")
+            return}
+        
+        switch operation{
+        case "+":
+            result = first + second
+            firstNumber = "\(result)"
+            currentTextField.text = "\(result)"
+        case "-":
+            result = first - second
+            firstNumber = "\(result)"
+            currentTextField.text = "\(result)"
+        case "*":
+            result = first * second
+            firstNumber = "\(result)"
+            currentTextField.text = "\(result)"
+        case "/":
+            if second == 0{
+                currentTextField.text = "Division by 0"
+            } else{
+                result = first / second
+                firstNumber = "\(result)"
+                currentTextField.text = "\(result)"
+            }
+        case "%":
+            result = first * second / 100
+            firstNumber = "\(result)"
+            currentTextField.text = "\(result)"
+        default:
+            print("Go home! You are tired")
+        }
+        
+        isResultFound = true
+        
+        
+    }
+    @IBAction func dotButton(_ sender: UIButton) {
+        print("dot tapped")
+        if operation.isEmpty{
+            firstNumber += "."
+            currentTextField.text = firstNumber
+        }else{
+            secondNumber += "."
+            currentTextField.text = secondNumber
+        }
+    }
+    
+    @IBAction func findPercent(_ sender: UIButton) {
+        if operation != "%"{
+            guard let first = Double(firstNumber), let second = Double(secondNumber) else {
+                print("Another method of finding percent")
+                return}
+            
+            switch operation{
+            case "+":
+                result = first + (first / 100 * second)
+            case "-":
+                result = first - (first / 100 * second)
+            case "*":
+                result = first * (first / 100 * second)
+            case "/":
+                result = first / (first / 100 * second)
+            default:
+                print("Go home! You are tired")
+            }
+            
+            isResultFound = true
+            
+            currentTextField.text = "\(result)"
+        }
+    }
+    
+    @IBAction func clear(_ sender: UIButton) {
+        reset()
+        currentTextField.text = "0"
+    }
+    
+    @IBAction func reverseSign(_ sender: UIButton) {
+        if isResultFound{
+            if result > 0{
+                result = -result
+            } else{
+                result = abs(result)
+            }
+            currentTextField.text = "\(result)"
+        } else if !isResultFound && !operation.isEmpty{
+            if var second = Int(secondNumber){
+                if second > 0 {
+                    second = -second
+                    secondNumber = "\(second)"
+                } else{
+                    second = abs(second)
+                    secondNumber = "\(second)"
+                }
+                currentTextField.text = secondNumber
+            }
+        } else{
+            if var first = Int(firstNumber){
+                if first > 0 {
+                    first = -first
+                    firstNumber = "\(first)"
+                } else{
+                    first = abs(first)
+                    firstNumber = "\(first)"
+                }
+                currentTextField.text = firstNumber
+            }
+        }
+    }
+    
+    
+    func reset(){
+        firstNumber = ""
+        secondNumber = ""
+        result = 0
+        operation = ""
+        isResultFound = false
+    }
+    
+    fileprivate func buttonsUIsetup() {
         zeroButton.layer.cornerRadius = zeroButton.bounds.height / 4
         zeroButton.layer.masksToBounds = true
         
@@ -96,195 +285,5 @@ class CalculatorVC2: UIViewController {
         
         dotButton.layer.cornerRadius = dotButton.bounds.height / 4
         dotButton.layer.masksToBounds = true
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func numberTapped(_ sender: UIButton) {
-        
-        switch sender.tag{
-        case 0:
-            print("0")
-            if operation.isEmpty{
-                firstNumber += "0"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "0"
-                currentTextField.text = secondNumber
-            }
-        case 1:
-            print("1")
-            if operation.isEmpty{
-                firstNumber += "1"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "1"
-                currentTextField.text = secondNumber
-            }
-        case 2:
-            print("2")
-            if operation.isEmpty{
-                firstNumber += "2"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "2"
-                currentTextField.text = secondNumber
-            }
-        case 3:
-            print("3")
-            if operation.isEmpty{
-                firstNumber += "3"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "3"
-                currentTextField.text = secondNumber
-            }
-        case 4:
-            print("4")
-            if operation.isEmpty{
-                firstNumber += "4"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "4"
-                currentTextField.text = secondNumber
-            }
-        case 5:
-            print("5")
-            if operation.isEmpty{
-                firstNumber += "5"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "5"
-                currentTextField.text = secondNumber
-            }
-        case 6:
-            print("6")
-            if operation.isEmpty{
-                firstNumber += "6"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "6"
-                currentTextField.text = secondNumber
-            }
-        case 7:
-            print("7")
-            if operation.isEmpty{
-                firstNumber += "7"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "7"
-                currentTextField.text = secondNumber
-            }
-        case 8:
-            print("8")
-            if operation.isEmpty{
-                firstNumber += "8"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "8"
-                currentTextField.text = secondNumber
-            }
-        case 9:
-            print("9")
-            if operation.isEmpty{
-                firstNumber += "9"
-                currentTextField.text = firstNumber
-            }else{
-                secondNumber += "9"
-                currentTextField.text = secondNumber
-            }
-        default:
-            print ("There is no such numbers")
-        }
-    }
-    
-    @IBAction func operations(_ sender: UIButton) {
-        switch sender.tag{
-        case 10:
-            print("+")
-            operation = "+"
-        case 11:
-            print("-")
-            operation = "-"
-        case 12:
-            print("*")
-            operation = "*"
-        case 13:
-            print("/")
-            operation = "/"
-        default:
-            print("Error. Please, try again")
-        }
-        
-    }
-    
-    
-    @IBAction func findTheResult(_ sender: UIButton) {
-        guard let first = Int(firstNumber), let second = Int(secondNumber) else {
-            print("There is no number")
-            return}
-        
-        switch operation{
-        case "+":
-            result = first + second
-        case "-":
-            result = first - second
-        case "*":
-            result = first * second
-        case "/":
-            result = first / second
-        default:
-            print("Go home! You are tired")
-        }
-        
-        currentTextField.text = "\(result)"
-        reset()
-    }
-    @IBAction func findPercent(_ sender: UIButton) {
-        guard let first = Int(firstNumber), let second = Int(secondNumber) else {
-            print("There is no number")
-            return}
-        
-        switch operation{
-        case "+":
-            result = first + (first / 100 * second)
-        case "-":
-            result = first - (first / 100 * second)
-        case "*":
-            result = first * (first / 100 * second)
-        case "/":
-            result = first / (first / 100 * second)
-        default:
-            print("Go home! You are tired")
-        }
-    @IBAction func clear(_ sender: UIButton) {
-        reset()
-        currentTextField.text = "0"
-    }
-    }
-        
-//    @IBAction func negativePositive(_ sender: UIButton) {
-//    }
-//    @IBAction func percent(_ sender: UIButton) {
-//    }
-    
-    
-    func reset(){
-        firstNumber = ""
-        secondNumber = ""
-        result = 0
-        operation = ""
     }
 }
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
-
-
