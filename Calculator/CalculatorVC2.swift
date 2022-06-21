@@ -143,7 +143,6 @@ class CalculatorVC2: UIViewController {
         
         isResultFound = true
         
-        
     }
     @IBAction func dotButton(_ sender: UIButton) {
         print("dot tapped")

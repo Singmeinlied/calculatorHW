@@ -352,6 +352,17 @@
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="80"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-zl-fAI">
+                                <rect key="frame" x="23" y="90" width="368" height="90"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="5vF-Kr-92P"/>
+                                    <constraint firstAttribute="height" constant="90" id="fc3-9U-laB"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="60"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -359,6 +370,7 @@
                             <constraint firstItem="X1S-r7-3o0" firstAttribute="leading" secondItem="50N-ie-sG5" secondAttribute="trailing" constant="16" id="1ui-a3-DXw"/>
                             <constraint firstItem="9u8-TI-79h" firstAttribute="leading" secondItem="kcO-yt-pOu" secondAttribute="trailing" constant="16" id="2oc-tJ-lUk"/>
                             <constraint firstItem="vnf-gU-cG7" firstAttribute="leading" secondItem="Jbj-Ty-yL6" secondAttribute="trailing" constant="16" id="3Z2-eI-KwE"/>
+                            <constraint firstItem="vSa-PU-OYn" firstAttribute="top" secondItem="GbW-zl-fAI" secondAttribute="bottom" constant="30" id="5fR-6l-OoE"/>
                             <constraint firstItem="dTE-eH-3uB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="5vK-Wz-BiZ"/>
                             <constraint firstItem="X1S-r7-3o0" firstAttribute="top" secondItem="7SK-92-gg6" secondAttribute="bottom" constant="16" id="6Op-Pu-2ao"/>
                             <constraint firstItem="Jbj-Ty-yL6" firstAttribute="leading" secondItem="k8n-OX-9MB" secondAttribute="trailing" constant="16" id="7qZ-KH-nS6"/>
@@ -366,6 +378,7 @@
                             <constraint firstItem="vSa-PU-OYn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="166" id="9l2-Tm-iJE"/>
                             <constraint firstItem="50N-ie-sG5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="BYb-qg-Jtz"/>
                             <constraint firstItem="Jbj-Ty-yL6" firstAttribute="top" secondItem="X1S-r7-3o0" secondAttribute="bottom" constant="16" id="CvT-Gh-wgs"/>
+                            <constraint firstItem="GbW-zl-fAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="DTT-WT-TgW"/>
                             <constraint firstItem="ANl-Vj-dae" firstAttribute="top" secondItem="fIe-ED-gzN" secondAttribute="bottom" constant="16" id="DcH-wW-fhW"/>
                             <constraint firstItem="NZ3-xy-OW6" firstAttribute="leading" secondItem="vnf-gU-cG7" secondAttribute="trailing" constant="16" id="Dfu-bS-xpD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ANl-Vj-dae" secondAttribute="trailing" constant="23" id="JMI-Ft-jDZ"/>
@@ -381,6 +394,7 @@
                             <constraint firstItem="vSa-PU-OYn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="crW-Td-mCl"/>
                             <constraint firstItem="k8n-OX-9MB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="cyf-TG-Eez"/>
                             <constraint firstItem="SsD-xl-O0W" firstAttribute="top" secondItem="vSa-PU-OYn" secondAttribute="bottom" constant="19" id="dSa-av-cXB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GbW-zl-fAI" secondAttribute="trailing" constant="23" id="dpk-Ft-iot"/>
                             <constraint firstItem="Srv-Ay-PdA" firstAttribute="leading" secondItem="SsD-xl-O0W" secondAttribute="trailing" constant="16" id="f1k-KW-dyZ"/>
                             <constraint firstItem="CtO-c1-JWS" firstAttribute="top" secondItem="SsD-xl-O0W" secondAttribute="bottom" constant="16" id="gTa-ZN-cIj"/>
                             <constraint firstItem="OK7-Ke-1yG" firstAttribute="top" secondItem="Srv-Ay-PdA" secondAttribute="bottom" constant="16" id="h1F-oa-rDR"/>
